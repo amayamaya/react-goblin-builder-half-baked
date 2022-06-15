@@ -8,19 +8,8 @@ function App() {
   const [goblinFormName, setGoblinFormName] = useState('');
   const [goblinFormColor, setGoblinFormColor] = useState('');
   const [goblinFormHP, setGoblinFormHP] = useState(0);
-  const [allGoblins, setAllGoblins] = useState([{ name: 'Chedder', color: 'green', HP: 50 }]);
-
-  // console.log(goblinFormName, goblinFormHP, goblinFormColor);
+  const [allGoblins, setAllGoblins] = useState([{ name: 'Cheddar', color: 'green', HP: 50 }]);
   console.log(allGoblins);
-
-  /* 
-    track: 
-      allGoblins, an array of all goblins
-      visibleGoblins, a second array of goblins: this one is the filtered version of the above allGoblins array
-      goblinFormName, which is how we track the user input for the current name of the goblin in the form
-      goblinFormHP, which is how we track the user input for the current HP of the goblin in the form
-      goblinFormColor, which is how we track the user input for the current color of the goblin in the form
-*/
 
   function submitGoblin(e) {
     e.preventDefault();
@@ -71,15 +60,9 @@ function App() {
         setGoblinFormColor={setGoblinFormColor}
         goblinFormHP={goblinFormHP}
         setGoblinFormHP={setGoblinFormHP}
-        /*
-        This component takes in a ton of props! 
-        Here is the list of props to pass:
-          submitGoblin,
-         **everything above will be tracked in state up top**
-        */
       />
       <GoblinList
-        goblins={[]} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array
+        goblins={allGoblins} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array
         handleDeleteGoblin={handleDeleteGoblin} // note that the goblin list has access to the ability to delete
       />
     </div>
