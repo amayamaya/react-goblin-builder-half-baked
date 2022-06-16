@@ -10,7 +10,7 @@ function App() {
   const [goblinFormHP, setGoblinFormHP] = useState(0);
   const [allGoblins, setAllGoblins] = useState([{ name: 'Cheddar', color: 'green', HP: 50 }]);
   const [visibleGoblins, setVisibleGoblins] = useState([]);
-  const [filterSting, setFilterString] = useState('');
+  const [filterString, setFilterString] = useState('');
 
   useEffect(() => {
     setVisibleGoblins(allGoblins);
@@ -48,7 +48,12 @@ function App() {
   return (
     <div className="App">
       <div className="current-goblin quarter">
-        <Goblin goblin={{ name: goblinFormName, hp: goblinFormHP, color: goblinFormColor }} />
+        <Goblin
+          goblin={
+            {name:goblinFormName, hp:goblinFormHP, color:goblinFormColor
+            }
+          }
+        />
       </div>
       <div className="goblin-filter quarter">
         Filter Goblins
