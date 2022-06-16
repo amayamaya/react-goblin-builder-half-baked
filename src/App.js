@@ -48,17 +48,12 @@ function App() {
   return (
     <div className="App">
       <div className="current-goblin quarter">
-        <Goblin
-          goblin={
-            {name:goblinFormName, hp:goblinFormHP, color:goblinFormColor
-            }
-          }
-        />
+        <Goblin goblin={{ name: goblinFormName, hp: goblinFormHP, color: goblinFormColor }} />
       </div>
       <div className="goblin-filter quarter">
         Filter Goblins
         {/* note that handleFilterGoblins is defined upstairs. This is where the allGoblins array gets filtered */}
-        <input onChange={(e) => handleFilterGoblins(e.target.value)} />
+        <input value={filterString} onChange={(e) => handleFilterGoblins(e.target.value)} />
       </div>
       <GoblinForm
         submitGoblin={submitGoblin}
