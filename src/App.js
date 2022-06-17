@@ -36,6 +36,7 @@ function App() {
   }
 
   function handleFilterGoblins(filterString) {
+    setFilterString(filterString);
     const updateGoblins = allGoblins.filter((goblin) =>
       goblin.name.toLocaleLowerCase().includes(filterString.toLocaleLowerCase())
     );
@@ -65,7 +66,7 @@ function App() {
         setGoblinFormHP={setGoblinFormHP}
       />
       <GoblinList
-        goblins={visibleGoblins.length ? visibleGoblins : allGoblins} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array
+        goblins={visibleGoblins} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array
         handleDeleteGoblin={handleDeleteGoblin} // note that the goblin list has access to the ability to delete
       />
     </div>
